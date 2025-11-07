@@ -1,0 +1,2 @@
+<!-- Individual product view -->
+<?php

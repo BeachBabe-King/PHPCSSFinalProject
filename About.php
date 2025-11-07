@@ -1,0 +1,2 @@
+<!-- About company page -->
+<?php

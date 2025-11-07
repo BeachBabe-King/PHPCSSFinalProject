@@ -1,0 +1,2 @@
+<!-- Product card template -->
+<?php

@@ -1,0 +1,2 @@
+<!-- All product view -->
+<?php
