@@ -1,0 +1,12 @@
+/* color variables */
+:root {
+    --background: #F7F3E9;
+    --secondBG: #E8DDC4;
+    --altBG: #2F3A32;
+    --primaryAccent: #4b2E05;
+    --secondAccent: #C0A060; /* buttons, icons... */
+    --textDark: #2D2D2D;
+    --textLight: #FDF8EF;
+    --glow: #FFF5D9;
+    --alert: #A65E2E;
+}
