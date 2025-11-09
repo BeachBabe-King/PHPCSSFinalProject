@@ -10,3 +10,37 @@
     --glow: #FFF5D9;
     --alert: #A65E2E;
 }
+/* Header styling */
+
+/* Logo */
+.logo {
+    flex-shrink: 0; /* Prevents logo from shrinking */
+}
+
+.logo img {
+    height: 60px; /* Set your preferred height */
+    width: auto; /* Maintains aspect ratio */
+    min-height: 50px; /* Min size */
+    max-height: 80px; /* Max size */
+    display: block;
+}
+
+/* Icon styling */
+.Icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Search icon */
+.searchBtn .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Header icons */
+.iconLink .Icon {
+    width: 24px;
+    height: 24px;
+}
+/* header styling end */
