@@ -1,2 +1,0 @@
-<!-- Company contact page -->
-<?php
