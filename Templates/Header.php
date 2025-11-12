@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profile creator page">
+    <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? "Infinite Knowledge at the Infinite Library"); ?>">>
     <meta name="author" content="Jessie Davis 200433256">
     <title><?php echo $pageTitle ?? 'The Infinite Library'; ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,9 +25,9 @@
             <form action="Shop.php" method="GET" class="searchForm">
                 <input
                         type="search"
-                        name="searchBar"
+                        name="search"
                         placeholder="Find your next read!"
-                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>"
+                        value="<?php echo isset($_GET["search"]) ? htmlspecialchars($_GET["search"]) : ""; ?>">
 
                 <button type="submit" class="searchBtn">
                     <img src="Assets/Icons/magGlassIcon.svg" alt="Search" class="Icon">
@@ -57,4 +60,3 @@
         </ul>
     </nav>
 </header>
-<main class="mainContent">

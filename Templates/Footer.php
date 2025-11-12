@@ -1,6 +1,4 @@
 <!-- Footer template -->
-</main>
-
 <footer>
     <!-- Left footer content container -->
     <div class="footContainer">

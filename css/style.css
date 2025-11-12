@@ -1,15 +1,49 @@
 /* color variables */
 :root {
+    /* Backgrounds */
     --background: #F7F3E9;
-    --secondBG: #E8DDC4;
-    --altBG: #2F3A32;
+    --altBackground: #E8DDC4;
+    --darkBackGround: #2F3A32;
+    /* Accent colors */
     --primaryAccent: #4b2E05;
-    --secondAccent: #C0A060; /* buttons, icons... */
-    --textDark: #2D2D2D;
-    --textLight: #FDF8EF;
+    --secondAccent: #C0A060; /* buttons */
     --glow: #FFF5D9;
     --alert: #A65E2E;
+    /* Text colors */
+    --headTextDark: #1A1919;
+    --headTextLight: #FDF8EF;
+    --textDark: #2D2D2D;
+    --textLight: #e5e5e5;
 }
+
+/* General text */
+body {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--textDark);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--headTextDark);
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.05rem;
+}
+
+a{
+    color: var(--primaryAccent);
+    text-decoration: none;
+}
+
 /* Header styling */
 
 /* Logo */
