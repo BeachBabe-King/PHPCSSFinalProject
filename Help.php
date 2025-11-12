@@ -56,7 +56,7 @@ require_once("Templates/Header.php");
 
         <div class="contactInfo">
 
-        <!-- Phone contact -->Container
+        <!-- Phone contact -->
             <div class="contactInfoCard">
                 <img class="contactIcon" src="Assets/Icons/redPhone.svg" alt="Phone Icon">
                 <h3>Phone</h3>

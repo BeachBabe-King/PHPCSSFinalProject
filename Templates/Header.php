@@ -20,9 +20,14 @@
         <!-- Search bar -->
         <div class="searchBar">
             <form action="Shop.php" method="GET" class="searchForm">
-                <input type="search" name="searchBar" placeholder="Search your next read!">
+                <input
+                        type="search"
+                        name="searchBar"
+                        placeholder="Find your next read!"
+                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>"
+
                 <button type="submit" class="searchBtn">
-                    <img src="Assets/Icons/magGlassIcon.svg" alt="Search" class="icon">
+                    <img src="Assets/Icons/magGlassIcon.svg" alt="Search" class="Icon">
                 </button>
             </form>
         </div>
@@ -48,7 +53,7 @@
         <ul class="navLinks">
             <li><a href="Shop.php">Browse</a></li>
             <li><a href="About.php">About</a></li>
-            <li><a href="Contact.php">Contact</a></li>
+            <li><a href="Help.php">Help</a></li>
         </ul>
     </nav>
 </header>

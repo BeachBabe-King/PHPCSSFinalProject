@@ -18,7 +18,7 @@
 }
 
 .logo img {
-    height: 60px; /* Set your preferred height */
+    height: 60px; /* Set preferred height */
     width: auto; /* Maintains aspect ratio */
     min-height: 50px; /* Min size */
     max-height: 80px; /* Max size */
