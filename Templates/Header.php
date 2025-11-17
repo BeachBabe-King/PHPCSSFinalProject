@@ -1,9 +1,16 @@
+<?php
+//Starts session if not already one
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? "Infinite Knowledge at the Infinite Library"); ?>">>
+    <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? "Infinite Knowledge at the Infinite Library"); ?>">
     <meta name="author" content="Jessie Davis 200433256">
     <title><?php echo $pageTitle ?? 'The Infinite Library'; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +55,11 @@
         </div>
         <!-- Login button -->
         <div class="loginBtn">
-            <a href="RegLog.php" class="btn">Login</a>
+            <?php if(isset($_SESSION["userId"])): ?>
+                <a href="Logout.php" class="btn">Logout</a>
+            <?php else: ?>
+            <a href="Login.php" class="btn">Login</a>
+            <?php endif; ?>
         </div>
     </div>
     <!-- nav under search and user actions -->

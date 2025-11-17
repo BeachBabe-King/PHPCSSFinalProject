@@ -5,8 +5,7 @@ require_once  "Classes/Database.php";
 $pageTitle = "Infinite Library Homepage";
 $pageDescription = "Infinite knowledge for quality prices";
 
-require_once  "Templates/Header.php";
-?>
+require_once  "Templates/Header.php"; ?>
 
 <!-- hero section -->
 <section class="hero">

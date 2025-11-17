@@ -1,2 +1,0 @@
-<!-- Register/login page -->
-<?php

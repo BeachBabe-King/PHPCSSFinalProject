@@ -1,4 +1,4 @@
-CREATE TABLE FPAdminTable (
+CREATE TABLE FPAdmin (
                        userId INT AUTO_INCREMENT PRIMARY KEY,
                        firstName VARCHAR(50) NOT NULL,
                        lastName VARCHAR(50) NOT NULL,
