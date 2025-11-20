@@ -131,17 +131,14 @@ try {
 
 //Gets products
 try {
-    $productParams = $params;
-    $productParams[] = $booksPerPage;
-    $productParams[] = $offset;
-
     $productSQL = "SELECT id, name, author, price, image, category, pageCount 
             FROM FPproduct
             $whereCombined
             ORDER BY name ASC 
-            LIMIT ? OFFSET ?";
+            LIMIT $booksPerPage OFFSET $offset";
+
     $productsStmt = $pdo->prepare($productSQL);
-    $productsStmt->execute($productParams);
+    $productsStmt->execute($params);
     $products = $productsStmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     $products = [];
@@ -376,6 +373,4 @@ require_once "Templates/Header.php";
     </div>
 </main>
 
-<?php
-require 'Templates/footer.php';
-?>
+<?php require_once 'Templates/footer.php'; ?>
