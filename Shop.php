@@ -10,7 +10,7 @@ $pageDescription = "Browse our collection in any genre";
 $database = new Database();
 $pdo = $database->getConnection();
 
-//Pagination
+//Pagination if more than 20 books
 $booksPerPage = 20;
 $currentPage = isset($_GET["page"]) ? max(1, intval($_GET["page"])) : 1;
 $offset = ($currentPage - 1) * $booksPerPage;
@@ -294,7 +294,7 @@ require_once "Templates/Header.php";
                     <div class="noProducts">
                         <h3>No Books Found</h3>
                         <p>Try changing your search</p>
-                        <a class="submitBtn" href="Shop.php">View All</a>
+                        <a class="submitBtn" href="Shop.php">Browse Collection</a>
                     </div>
                 <?php endif; ?>
             </div>
