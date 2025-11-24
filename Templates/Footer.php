@@ -1,3 +1,9 @@
+<?php
+// Sets base filepath if in admin folder
+$inAdmin = strpos($_SERVER['PHP_SELF'], "/Admin/") !== false;
+$basePath = $inAdmin ? "../" : "";
+?>
+
 <!-- Footer template -->
 <footer>
     <!-- Left footer content container -->
@@ -38,11 +44,11 @@
         <a class="button" href="#">Learn More</a>
         <div class="socMediaLinks">
             <a href="#">
-                <img src="Assets/Icons/facebook.png" alt="Facebook Logo" class="Icon"></a>
+                <img src="<?php echo $basePath; ?>Assets/Icons/facebook.png" alt="Facebook Logo" class="Icon"></a>
             <a href="#">
-                <img src="Assets/Icons/instagram.png" alt="Instagram Logo" class="Icon"></a>
+                <img src="<?php echo $basePath; ?>Assets/Icons/instagram.png" alt="Instagram Logo" class="Icon"></a>
             <a href="#">
-                <img src="Assets/Icons/twitter.png" alt="X Logo" class="Icon"></a>
+                <img src="<?php echo $basePath; ?>Assets/Icons/twitter.png" alt="X Logo" class="Icon"></a>
         </div>
     </div>
     <div class="footerBottom">

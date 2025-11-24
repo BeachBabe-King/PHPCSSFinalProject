@@ -104,7 +104,7 @@ if (!empty($selectedPageCount)) {
     }
 }
 
-//Search
+//Search filter
 if (!empty($searchQuery)) {
     $whereStmt[] = "(name LIKE ? OR description LIKE ? OR author LIKE ?)";
     $searchParam = "%" . $searchQuery . "%";
@@ -113,7 +113,7 @@ if (!empty($searchQuery)) {
     $params[] = $searchParam;
 }
 
-//Combine statements
+// Build WHERE if filters present
 $whereCombined = !empty($whereStmt) ? "WHERE " . implode(" AND ", $whereStmt) : "";
 
 //Total books
@@ -287,7 +287,7 @@ require_once "Templates/Header.php";
             <div class="productGrid">
                 <?php if (!empty($products)): ?>
                     <?php foreach ($products as $product): ?>
-                        <!-- Product card template NEEDED -->
+                        <!-- Product card template -->
                         <?php include "Templates/productCard.php"; ?>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -303,35 +303,27 @@ require_once "Templates/Header.php";
             <?php if ($totalPages > 1): ?>
 
                 <?php
-                // Filter string for pagination
-                $filterParams = "";
+                // Build filter params array for pagination
+                $filterParams = ["page" => 1]; // Will be updated in loop
 
                 // Genre checkbox array
                 if (!empty($selectedGenre) && is_array($selectedGenre)) {
-                    foreach ($selectedGenre as $genre) {
-                        if ($genre !== "All") {
-                            $filterParams .= "&genre[]=" . urlencode($genre);
-                        }
-                    }
+                    $filterParams["genre"] = $selectedGenre;
                 }
 
                 // Price checkbox array
                 if (!empty($selectedPrice) && is_array($selectedPrice)) {
-                    foreach ($selectedPrice as $price) {
-                        $filterParams .= "&price[]=" . urlencode($price);
-                    }
+                    $filterParams["price"] = $selectedPrice;
                 }
 
                 // Page count checkbox array
                 if (!empty($selectedPageCount) && is_array($selectedPageCount)) {
-                    foreach ($selectedPageCount as $pageCount) {
-                        $filterParams .= "&pages[]=" . urlencode($pageCount);
-                    }
+                    $filterParams["pages"] = $selectedPageCount;
                 }
 
                 // Search
                 if (!empty($searchQuery)) {
-                    $filterParams .= "&search=" . urlencode($searchQuery);
+                    $filterParams["search"] = $searchQuery;
                 }
                 ?>
 
@@ -341,7 +333,8 @@ require_once "Templates/Header.php";
                         <!-- Previous -->
                         <?php if ($currentPage > 1): ?>
                             <li class="paginationItem">
-                                <a href="?page=<?php echo $currentPage - 1 . $filterParams; ?>" class="paginationLink">
+                                <?php $filterParams["page"] = $currentPage - 1; ?>
+                                <a href="?<?php echo http_build_query($filterParams); ?>" class="paginationLink">
                                     &laquo; Previous
                                 </a>
                             </li>
@@ -350,7 +343,8 @@ require_once "Templates/Header.php";
                         <!-- Page numbers -->
                         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                             <li class="paginationItem">
-                                <a href="?page=<?php echo $i . $filterParams; ?>"
+                                <?php $filterParams["page"] = $i ?>
+                                <a href="?<?php echo http_build_query($filterParams); ?>"
                                    class="paginationLink <?php echo $i === $currentPage ? "active" : ""; ?>">
                                     <?php echo $i; ?>
                                 </a>
@@ -360,7 +354,8 @@ require_once "Templates/Header.php";
                         <!-- Next  -->
                         <?php if ($currentPage < $totalPages): ?>
                             <li class="paginationItem">
-                                <a href="?page=<?php echo $currentPage + 1 . $filterParams; ?>" class="paginationLink">
+                                <?php $filterParams["page"] = $currentPage + 1; ?>
+                                <a href="?<?php echo http_build_query($filterParams); ?>" class="paginationLink">
                                     Next &raquo;
                                 </a>
                             </li>
@@ -373,4 +368,4 @@ require_once "Templates/Header.php";
     </div>
 </main>
 
-<?php require_once 'Templates/footer.php'; ?>
+<?php require_once "Templates/footer.php"; ?>

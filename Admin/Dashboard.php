@@ -43,7 +43,7 @@ require_once "../Templates/Header.php";
             <p>View, edit, and delete items from shelves</p>
         </a>
 
-        <!-- Import from google books (bonus) -->
+        <!-- Import from Google books (bonus) -->
         <a href="importBooks.php" class="dashboardCard">
             <div class="dashboardIcon">
                 <img src="../Assets/Icons/importIcon.svg" alt="Import icon"
@@ -63,3 +63,5 @@ require_once "../Templates/Header.php";
 
     </div>
 </main>
+
+<?php require_once "../Templates/Footer.php"; ?>
