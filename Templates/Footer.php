@@ -58,3 +58,5 @@ $basePath = $inAdmin ? "../" : "";
         <a href="#">Terms of Use</a>
     </div>
 </footer>
+</body>
+</html>

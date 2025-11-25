@@ -46,7 +46,7 @@ require_once "../Templates/Header.php";
         <!-- Import from Google books (bonus) -->
         <a href="importBooks.php" class="dashboardCard">
             <div class="dashboardIcon">
-                <img src="../Assets/Icons/importIcon.svg" alt="Import icon"
+                <img src="../Assets/Icons/importIcon.svg" alt="Import icon">
             </div>
             <h3>Import from Google books</h3>
             <p>Search and import books from google database</p>

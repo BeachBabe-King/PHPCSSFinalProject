@@ -51,7 +51,7 @@ WHERE id = ?");
 }
 
 $pageTitle = htmlspecialchars($product["name"]);
-$pageDescription = "Buy" . htmlspecialchars($product["name"]) . " by " . htmlspecialchars($product["author"]);
+$pageDescription = "Buy " . htmlspecialchars($product["name"]) . " by " . htmlspecialchars($product["author"]);
 
 require_once "Templates/header.php";
 ?>
@@ -117,3 +117,5 @@ require_once "Templates/header.php";
         </div>
     <?php endif; ?>
 </main>
+
+<?php require_once "Templates/footer.php"; ?>

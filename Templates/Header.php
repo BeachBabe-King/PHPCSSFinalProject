@@ -43,7 +43,7 @@ $basePath = $inAdmin ? "../" : "";
             } else {
                 echo $basePath . "Shop.php";
             }
-            ?>"method="GET" class="searchForm">
+            ?>" method="GET" class="searchForm">
                 <input
                         type="search"
                         name="search"
