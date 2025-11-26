@@ -58,5 +58,6 @@ $basePath = $inAdmin ? "../" : "";
         <a href="#">Terms of Use</a>
     </div>
 </footer>
+<script src="<?php echo $basePath; ?>js/carousel.js" defer></script>
 </body>
 </html>
