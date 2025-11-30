@@ -35,10 +35,6 @@ require_once("Templates/Header.php")
                 lost in a new world, we are here to help you find your next chapter.
             </p>
         </div>
-        <!-- Image NEEDED -->
-        <div>
-            <img src="#" alt="Background image">
-        </div>
     </section>
 
     <!-- Mission section -->

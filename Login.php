@@ -81,6 +81,7 @@ require_once "Templates/Header.php";
                 <?php foreach ($errors as $error): ?>
                     <p class="errorMessage"><?php echo htmlspecialchars($error); ?></p>
                 <?php endforeach; ?>
+                <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
             </div>
         <?php endif; ?>
 

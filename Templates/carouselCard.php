@@ -15,14 +15,16 @@
             <?php endif; ?>
         </div>
 
-        <!-- Price-->
-        <div class="carouselPrice">
-            <p>$<?php echo number_format($product["price"], 2); ?></p>
+        <!-- Title and Price -->
+        <div class="carouselCardInfo">
+            <h4 class="carouselTitle"><?php echo htmlspecialchars($product["name"]); ?></h4>
+            <div class="carouselPrice">
+                <p>$<?php echo number_format($product["price"], 2); ?></p>
+            </div>
         </div>
     </a>
-
     <!-- Add to cart button -->
     <div class="addToCartBtn">
-        <button>Add to cart</button>
+        <button>Buy Now</button>
     </div>
 </article>

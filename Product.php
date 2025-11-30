@@ -25,7 +25,7 @@ WHERE id = ?");
         $pageTitle = "Product not found";
         $pageDescription = "The product you are looking for does not exist";
 
-        require_once "Templates/header.php";
+        require_once "Templates/Header.php";
         ?>
         <section class="pageHeader">
             <div class="Container">
@@ -53,7 +53,7 @@ WHERE id = ?");
 $pageTitle = htmlspecialchars($product["name"]);
 $pageDescription = "Buy " . htmlspecialchars($product["name"]) . " by " . htmlspecialchars($product["author"]);
 
-require_once "Templates/header.php";
+require_once "Templates/Header.php";
 ?>
 
 <section class="pageHeader">
@@ -103,7 +103,7 @@ require_once "Templates/header.php";
                     <button class="addCartBtn" disabled>Out of stock</button>
                 <?php endif; ?>
 
-                <a href="Favourites.php" class="linkIcon detailsFav" >
+                <a href="#" class="linkIcon detailsFav" >
                     <img src="Assets/Icons/heartIcon.svg" alt="Favourites" class="Icon"></a>
             </div>
         </div>
@@ -118,4 +118,4 @@ require_once "Templates/header.php";
     <?php endif; ?>
 </main>
 
-<?php require_once "Templates/footer.php"; ?>
+<?php require_once "Templates/Footer.php"; ?>

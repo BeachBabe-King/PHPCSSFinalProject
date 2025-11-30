@@ -42,6 +42,14 @@ try {
 
 require_once  "Templates/Header.php"; ?>
 
+    <!-- Success message -->
+<?php if (isset($_GET["success"]) && $_GET["success"] === "registered"): ?>
+    <div class="successMessage">
+        <p>Your account has been created successfully, Welcome!</p>
+        <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
+    </div>
+<?php endif; ?>
+
 <!-- Hero section -->
 <section class="hero">
     <div class="heroContent">

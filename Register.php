@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["isAdmin"] = false;
 
             //Redirect to homepage
-            header("Location: index.php");
+            header("Location: index.php?success=registered");
             exit();
         } catch (PDOException $e) {
             $errors[] = "Could not create account. Please try again later";
@@ -131,11 +131,12 @@ require_once "Templates/Header.php";
             <h2 class="cardTitle">Create Your Profile</h2>
 
             <!-- Error messages -->
-            <?php if (!empty($errors)) : ?>
+            <?php if (!empty($errors)): ?>
                 <div class="errorMessages">
-                    <?php foreach ($errors as $error) : ?>
-                        <p class="errorMessage"><?php echo htmlspecialchars($error) ?></p>
+                    <?php foreach ($errors as $error): ?>
+                        <p class="errorMessage"><?php echo htmlspecialchars($error); ?></p>
                     <?php endforeach; ?>
+                    <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
                 </div>
             <?php endif; ?>
 

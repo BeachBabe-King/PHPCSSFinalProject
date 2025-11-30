@@ -42,8 +42,6 @@
         ?>
         <a href="manageProducts.php?<?php echo http_build_query($deleteQuery); ?>"
            class="deleteBtn"
-           onclick="return confirm('Delete <?php echo htmlspecialchars($product["name"]); ?>?');
-               ">Delete
-        </a>
+           onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars(addslashes($product["name"])); ?>?');">Delete</a>
     </div>
 </article>

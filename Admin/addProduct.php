@@ -153,6 +153,7 @@ require_once "../Templates/Header.php";
     <?php if (!empty($success)): ?>
         <div class="successMessage">
             <p><?php echo htmlspecialchars($success); ?></p>
+            <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
         </div>
     <?php endif; ?>
 
@@ -162,6 +163,7 @@ require_once "../Templates/Header.php";
             <?php foreach ($errors as $error): ?>
                 <p class="errorMessage"><?php echo htmlspecialchars($error); ?></p>
             <?php endforeach; ?>
+            <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
         </div>
     <?php endif; ?>
 

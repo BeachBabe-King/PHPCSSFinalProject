@@ -368,4 +368,4 @@ require_once "Templates/Header.php";
     </div>
 </main>
 
-<?php require_once "Templates/footer.php"; ?>
+<?php require_once "Templates/Footer.php"; ?>
