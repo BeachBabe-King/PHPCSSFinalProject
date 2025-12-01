@@ -3,8 +3,7 @@
 $pageTitle = "About us";
 $pageDescription = "The Infinite Library's Story";
 
-require_once("Templates/Header.php")
-?>
+require_once("Templates/Header.php"); ?>
 
 <section class="pageHeader">
     <div class="Container">

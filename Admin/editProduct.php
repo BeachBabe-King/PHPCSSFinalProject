@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $stock
             );
 
-            $success = "Book added successfully";
+            $success = "Book updated successfully";
 
             // Redirect back to manage product
             header("location: manageProducts.php?success=updated");

@@ -312,7 +312,7 @@ header {
 .loginBtn .btn:hover {
     background-color: var(--glow);
     transform: var(--smallLift);
-    box-shadow: var(0 0 10px var(--glowGold));
+    box-shadow: 0 0 10px var(--glowGold);
 }
 
 /*Navigation*/
@@ -466,7 +466,7 @@ footer .button:hover {
 .submitBtn:hover {
     background-color: var(--glow);
     transition: var(--smallLift);
-    box-shadow: var(0 4px 15px var(--glowGold));
+    box-shadow: 0 4px 15px var(--glowGold);
 }
 
 .submitBtn:disabled {
@@ -581,6 +581,7 @@ footer .button:hover {
     background-color: #FFFFFF;
     border-radius: var(--cardBorder);
     box-shadow: var(--cardShadow);
+    margin-bottom: var(--spacingXl);
 }
 
 .loginContainer {
@@ -590,8 +591,8 @@ footer .button:hover {
     border-radius: var(--cardBorder);
     box-shadow: var(--cardShadow);
     margin-bottom: var(--spacingXl);
-    width: 100%;
-    max-width: 50rem;
+    width: 44rem;
+    max-width: 100%;
 }
 
 .registerCard {
@@ -601,6 +602,7 @@ footer .button:hover {
     border-radius: var(--cardBorder);
     box-shadow: var(--cardShadow);
     overflow: hidden;
+    margin-bottom: var(--spacingXl);
 }
 
 .cardBody {
@@ -705,8 +707,6 @@ footer .button:hover {
 
 .currentImage p {
     margin-bottom: var(--spacingSmall);
-    font-weight: 600;
-    font-size: 2em;
     padding-right: 2rem;
 }
 
@@ -1422,13 +1422,16 @@ select:focus {
 }
 
 .contactInfoCard {
-    display: grid;
+    display: flex;
     text-align: center;
     padding: var(--spacingXl);
     background-color: white;
     border-radius: var(--cardBorder);
     box-shadow: var(--cardShadow);
     justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contactInfoCard:hover {
@@ -1652,6 +1655,7 @@ select:focus {
     }
 
     #filterSidebar {
+        display: none;
         position: static;
         max-height: none;
     }
@@ -1668,10 +1672,9 @@ select:focus {
         grid-template-columns: 1fr;
     }
 
-    .loginContainer,
-    .registerCard {
+    .loginContainer, .registerCard {
         margin: 0 var(--spacingMedium);
-        max-width: 100%;
+        width: 100%;
     }
 
     footer .footContainer:first-of-type {
@@ -1736,15 +1739,13 @@ select:focus {
         flex-direction: column;
     }
 
-    .addFormContainer,
-    .loginContainer,
-    .registerCard,
-    .cardBody {
+    .addFormContainer, .loginContainer, .registerCard, .cardBody {
         padding: var(--spacingLarge);
     }
 
-    .loginContainer,
-    .registerCard {
-        margin: 0 var(--spacingSmall);
+    .loginContainer, .registerCard {
+        margin: 0 var(--spacingMedium);
+        width: 100%;
+        margin-bottom: 2rem;
     }
 }
