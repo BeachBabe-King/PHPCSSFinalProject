@@ -10,6 +10,9 @@ The Infinite Library is a dynamic site featuring:
 - **Responsive Design**: Fully responsive using custom CSS
 
 
+## Technologies
+PHP 8, MySQL, HTML5, CSS3, JavaScript (ES6)
+
 ## Features
 
 ### Public Pages
