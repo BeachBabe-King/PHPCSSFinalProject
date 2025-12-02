@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Create directory if none exist
         if (!file_exists($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
+            mkdir($uploadDir, 0755, true);
         }
 
         $imageFileType = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
@@ -166,124 +166,125 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-require_once "../Templates/Header.php";?>
+require_once "../Templates/Header.php"; ?>
 
-<section class="pageHeader">
-    <h1>Edit book</h1>
-</section>
+    <section class="pageHeader">
+        <h1>Edit book</h1>
+    </section>
 
-<main class="Container">
+    <main class="Container">
 
-    <!-- Error messages -->
-    <?php if (!empty($errors)): ?>
-        <div class="errorMessages">
-            <?php foreach ($errors as $error): ?>
-                <p class="errorMessage"><?php echo htmlspecialchars($error); ?></p>
-            <?php endforeach; ?>
-            <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
-        </div>
-    <?php endif; ?>
-
-    <div class="addFormContainer">
-        <form method="POST" action="editProduct.php?id=<?php echo $productId; ?>" enctype="multipart/form-data" class="addBookForm">
-
-            <div class="formRow">
-                <div class="formField">
-                    <label for="name">Book title<span class="Required">*</span></label>
-                    <input type="text"
-                           id="name"
-                           name="name"
-                           required
-                           maxlength="200"
-                           value="<?php echo htmlspecialchars($name); ?>">
-                </div>
-
-                <div class="formField">
-                    <label for="author">Author<span class="Required">*</span></label>
-                    <input type="text"
-                           id="author"
-                           name="author"
-                           required
-                           maxlength="255"
-                           value="<?php echo htmlspecialchars($author); ?>">
-                </div>
+        <!-- Error messages -->
+        <?php if (!empty($errors)): ?>
+            <div class="errorMessages">
+                <?php foreach ($errors as $error): ?>
+                    <p class="errorMessage"><?php echo htmlspecialchars($error); ?></p>
+                <?php endforeach; ?>
+                <button class="closeMsg" onclick="this.parentElement.remove();" aria-label="Close">&times;</button>
             </div>
+        <?php endif; ?>
 
-            <div class="formField">
-                <label for="description">Description</label>
-                <textarea id="description"
-                          name="description"
-                          rows="6"><?php echo htmlspecialchars($description); ?></textarea>
-            </div>
+        <div class="addFormContainer">
+            <form method="POST" action="editProduct.php?id=<?php echo $productId; ?>" enctype="multipart/form-data"
+                  class="addBookForm">
 
-            <div class="formRow">
-                <div class="formField">
-                    <label for="price">Price<span class="Required">*</span></label>
-                    <input type="number"
-                           id="price"
-                           name="price"
-                           step=".01"
-                           min="0"
-                           required
-                           value="<?php echo htmlspecialchars($price); ?>">
-                </div>
-
-                <div class="formField">
-                    <label for="stock">Stock<span class="Required">*</span></label>
-                    <input type="number"
-                           id="stock"
-                           name="stock"
-                           min="0"
-                           required
-                           value="<?php echo htmlspecialchars($stock); ?>">
-                </div>
-            </div>
-
-            <div class="formRow">
-                <div class="formField">
-                    <label for="category">Genre<span class="Required">*</span></label>
-                    <input type="text"
-                           id="category"
-                           name="category"
-                           required
-                           value="<?php echo htmlspecialchars($category); ?>">
-                </div>
-
-                <div class="formField">
-                    <label for="pageCount">Page Count</label>
-                    <input type="number"
-                           id="pageCount"
-                           name="pageCount"
-                           min="0"
-                           value="<?php echo htmlspecialchars($pageCount); ?>">
-                </div>
-            </div>
-
-            <div class="formField">
-                <label for="image">Book Cover image</label>
-
-                <!-- Shows current book image -->
-                <?php if (!empty($image)): ?>
-                    <div class="currentImage">
-                        <p>Current Cover:</p>
-                        <img src="../<?php echo htmlspecialchars($image); ?>" alt="Current cover">
+                <div class="formRow">
+                    <div class="formField">
+                        <label for="name">Book title<span class="Required">*</span></label>
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               required
+                               maxlength="200"
+                               value="<?php echo htmlspecialchars($name); ?>">
                     </div>
-                <?php endif; ?>
 
-                <input type="file"
-                       id="image"
-                       name="image"
-                       accept="image/*">
-                <small>JPG, PNG, WEBP (Max 15MB)</small>
-            </div>
+                    <div class="formField">
+                        <label for="author">Author<span class="Required">*</span></label>
+                        <input type="text"
+                               id="author"
+                               name="author"
+                               required
+                               maxlength="255"
+                               value="<?php echo htmlspecialchars($author); ?>">
+                    </div>
+                </div>
 
-            <div class="formActions">
-                <button type="submit" class="submitBtn">Update Book</button>
-                <a href="manageProducts.php" class="cancelBtn"> Cancel</a>
-            </div>
+                <div class="formField">
+                    <label for="description">Description</label>
+                    <textarea id="description"
+                              name="description"
+                              rows="6"><?php echo htmlspecialchars($description); ?></textarea>
+                </div>
 
-        </form>
-    </div>
-</main>
+                <div class="formRow">
+                    <div class="formField">
+                        <label for="price">Price<span class="Required">*</span></label>
+                        <input type="number"
+                               id="price"
+                               name="price"
+                               step=".01"
+                               min="0"
+                               required
+                               value="<?php echo htmlspecialchars($price); ?>">
+                    </div>
+
+                    <div class="formField">
+                        <label for="stock">Stock<span class="Required">*</span></label>
+                        <input type="number"
+                               id="stock"
+                               name="stock"
+                               min="0"
+                               required
+                               value="<?php echo htmlspecialchars($stock); ?>">
+                    </div>
+                </div>
+
+                <div class="formRow">
+                    <div class="formField">
+                        <label for="category">Genre<span class="Required">*</span></label>
+                        <input type="text"
+                               id="category"
+                               name="category"
+                               required
+                               value="<?php echo htmlspecialchars($category); ?>">
+                    </div>
+
+                    <div class="formField">
+                        <label for="pageCount">Page Count</label>
+                        <input type="number"
+                               id="pageCount"
+                               name="pageCount"
+                               min="0"
+                               value="<?php echo htmlspecialchars($pageCount); ?>">
+                    </div>
+                </div>
+
+                <div class="formField">
+                    <label for="image">Book Cover image</label>
+
+                    <!-- Shows current book image -->
+                    <?php if (!empty($image)): ?>
+                        <div class="currentImage">
+                            <p>Current Cover:</p>
+                            <img src="../<?php echo htmlspecialchars($image); ?>" alt="Current cover">
+                        </div>
+                    <?php endif; ?>
+
+                    <input type="file"
+                           id="image"
+                           name="image"
+                           accept="image/*">
+                    <small>JPG, PNG, WEBP (Max 15MB)</small>
+                </div>
+
+                <div class="formActions">
+                    <button type="submit" class="submitBtn">Update Book</button>
+                    <a href="manageProducts.php" class="cancelBtn"> Cancel</a>
+                </div>
+
+            </form>
+        </div>
+    </main>
 
 <?php require_once "../Templates/Footer.php"; ?>

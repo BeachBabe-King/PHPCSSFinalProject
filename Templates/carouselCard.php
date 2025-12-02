@@ -1,6 +1,6 @@
 <!-- Carousel card template -->
 <article class="carouselCard">
-    <a href="Product.php?id=<?php echo $product["id"]; ?>" class="carouselCardLink">
+    <a href="Product.php?id=<?php echo htmlspecialchars($product["id"]); ?>" class="carouselCardLink">
 
         <!-- Book cover -->
         <div class="productImageContainer">

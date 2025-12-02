@@ -1,4 +1,5 @@
 <?php
+
 class Product
 {
     private $pdo;
@@ -31,7 +32,8 @@ class Product
     }
 
     // Get all products (manageProducts)
-    public function getAllProducts() {
+    public function getAllProducts()
+    {
         $sql = "SELECT id, name, author, price, category, stock, createdAt
         FROM FPproduct
         ORDER BY createdAt DESC";
@@ -43,7 +45,8 @@ class Product
     }
 
     // Get single product using id
-    public function getProduct($id) {
+    public function getProduct($id)
+    {
         $sql = "SELECT * FROM FPproduct WHERE id = :id";
 
         $stmt = $this->pdo->prepare($sql);
@@ -81,24 +84,26 @@ class Product
         ]);
     }
 
-        // Delete product
-        public function deleteProduct($id)
-        {
-            $sql = "DELETE FROM FPproduct WHERE id = :id";
+    // Delete product
+    public function deleteProduct($id)
+    {
+        $sql = "DELETE FROM FPproduct WHERE id = :id";
 
-            $stmt = $this->pdo->prepare($sql);
+        $stmt = $this->pdo->prepare($sql);
 
-            return $stmt->execute([":id" => $id]);
-        }
+        return $stmt->execute([":id" => $id]);
+    }
 
-        // Checks if product exists
-        public function productExists($id) {
-            $sql = "SELECT id FROM FPproduct WHERE id = :id";
+    // Checks if product exists
+    public function productExists($id)
+    {
+        $sql = "SELECT id FROM FPproduct WHERE id = :id";
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([":id" => $id]);
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":id" => $id]);
 
-            return $stmt->fetch() ? true : false;
+        return $stmt->fetch() ? true : false;
     }
 }
+
 ?>

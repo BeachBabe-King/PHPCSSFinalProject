@@ -21,13 +21,13 @@
             <span class="productCategory"><?php echo htmlspecialchars($product["category"]); ?></span>
             <span class="productPages"><?php echo htmlspecialchars($product["pageCount"]); ?> pg</span>
         </div>
-        <p class="productPrice">$<?php echo number_format($product["price"], 2);?></p>
+        <p class="productPrice">$<?php echo number_format($product["price"], 2); ?></p>
         <p class="productStock">Qty: <?php echo $product["stock"]; ?></p>
     </div>
 
     <!-- Edit and delete buttons -->
     <div class="manageActions">
-        <a href="editProduct.php?id=<?php echo $product["id"];?>" class="editBtn">Edit</a>
+        <a href="editProduct.php?id=<?php echo htmlspecialchars($product["id"]); ?>" class="editBtn">Edit</a>
 
         <!-- Builds delete URL -->
         <?php

@@ -45,10 +45,10 @@ require_once("Templates/Header.php"); ?>
 
         <!-- Mission cards -->
         <div class="missionCards">
-           <article class="missionCard">
-               <h3>Your Story Matters</h3>
-               <p>We believe that every story should be seen, cherished, and shared.</p>
-           </article>
+            <article class="missionCard">
+                <h3>Your Story Matters</h3>
+                <p>We believe that every story should be seen, cherished, and shared.</p>
+            </article>
 
             <article class="missionCard">
                 <h3>Claim Your Next Story</h3>

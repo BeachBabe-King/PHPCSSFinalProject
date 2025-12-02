@@ -7,7 +7,7 @@ require_once "Classes/User.php";
 session_start();
 
 //Redirects if already logged in
-if (isset($_SESSION["userId"])){
+if (isset($_SESSION["userId"])) {
     if ($_SESSION["isAdmin"]) {
         header("Location: Admin/Dashboard.php");
     } else {
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         } catch (PDOException $e) {
             $errors[] = "Login failed. Please try again";
-            error_log("Login error: " .$e->getMessage());
+            error_log("Login error: " . $e->getMessage());
         }
     }
 }

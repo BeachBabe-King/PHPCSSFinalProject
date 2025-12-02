@@ -15,12 +15,14 @@ $basePath = $inAdmin ? "../" : "";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? "Infinite Knowledge at the Infinite Library"); ?>">
+    <meta name="description"
+          content="<?php echo htmlspecialchars($pageDescription ?? "Infinite Knowledge at the Infinite Library"); ?>">
     <meta name="author" content="Jessie Davis 200433256">
     <title><?php echo htmlspecialchars($pageTitle ?? 'The Infinite Library'); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Playfair+Display:wght@700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $basePath; ?>css/style.css">
 </head>
 <body>
@@ -70,10 +72,10 @@ $basePath = $inAdmin ? "../" : "";
         </div>
         <!-- Login button -->
         <div class="loginBtn">
-            <?php if(isset($_SESSION["userId"])): ?>
+            <?php if (isset($_SESSION["userId"])): ?>
                 <a href="<?php echo $basePath; ?>Logout.php" class="btn">Logout</a>
             <?php else: ?>
-            <a href="<?php echo $basePath; ?>Login.php" class="btn">Login</a>
+                <a href="<?php echo $basePath; ?>Login.php" class="btn">Login</a>
             <?php endif; ?>
         </div>
     </div>
@@ -87,7 +89,7 @@ $basePath = $inAdmin ? "../" : "";
             <!-- Admin dashboard link (only displays to admins) -->
             <?php if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]): ?>
                 <li><a href="<?php echo $inAdmin ? "Dashboard.php" : $basePath . "Admin/Dashboard.php";
-                ?>">Dashboard</a></li>
+                    ?>">Dashboard</a></li>
             <?php endif; ?>
 
         </ul>

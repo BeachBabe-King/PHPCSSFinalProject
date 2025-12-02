@@ -1,4 +1,5 @@
 <?php
+
 //Database connection
 class Database
 {
@@ -28,4 +29,5 @@ class Database
         return $this->pdo;
     }
 }
+
 ?>

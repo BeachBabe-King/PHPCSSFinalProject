@@ -11,7 +11,7 @@ $database = new Database();
 $pdo = $database->getConnection();
 
 //Fetch product data
-try{
+try {
     $stmt = $pdo->prepare("
 SELECT id, name, author, description, price, image, category, pageCount, stock
 FROM FPproduct
@@ -41,12 +41,12 @@ WHERE id = ?");
         </main>
 
         <?php
-        require_once "Templates/footer.php";
+        require_once "Templates/Footer.php";
         exit();
-     }
+    }
 } catch (PDOException $e) {
-    error_log("Can't fetch product" .$e->getMessage());
-    header("Location: shop.php");
+    error_log("Can't fetch product" . $e->getMessage());
+    header("Location: Shop.php");
     exit();
 }
 
@@ -84,14 +84,14 @@ require_once "Templates/Header.php";
                 Genre: <strong><?php echo htmlspecialchars($product["category"]); ?></strong>
             </p>
             <p class="detailsPrice">
-                $ <?php echo number_format($product["price"], 2);?>
+                $ <?php echo number_format($product["price"], 2); ?>
             </p>
             <p class="detailsPageCount">
-                Pages: <strong><?php echo htmlspecialchars($product["pageCount"]);?></strong>
+                Pages: <strong><?php echo htmlspecialchars($product["pageCount"]); ?></strong>
             </p>
             <p class="detailsStock">
                 <?php if ($product["stock"] > 0): ?>
-                    Available: <?php echo htmlspecialchars($product["stock"]);?>
+                    Available: <?php echo htmlspecialchars($product["stock"]); ?>
                 <?php else: ?>
                     Out of stock
                 <?php endif; ?>
@@ -103,7 +103,7 @@ require_once "Templates/Header.php";
                     <button class="addCartBtn" disabled>Out of stock</button>
                 <?php endif; ?>
 
-                <a href="#" class="linkIcon detailsFav" >
+                <a href="#" class="linkIcon detailsFav">
                     <img src="Assets/Icons/heartIcon.svg" alt="Favourites" class="Icon"></a>
             </div>
         </div>
@@ -113,7 +113,7 @@ require_once "Templates/Header.php";
     <?php if (!empty($product["description"])): ?>
         <div class="detailsDescription">
             <h2>Description</h2>
-            <p><?php echo nl2br(htmlspecialchars($product["description"]));?></p>
+            <p><?php echo nl2br(htmlspecialchars($product["description"])); ?></p>
         </div>
     <?php endif; ?>
 </main>

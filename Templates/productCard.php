@@ -1,6 +1,6 @@
 <!-- Product card template -->
 <article class="productCard">
-    <a href="Product.php?id=<?php echo $product["id"]; ?>" class="productCardLink">
+    <a href="Product.php?id=<?php echo htmlspecialchars($product["id"]); ?>" class="productCardLink">
         <!-- Product image -->
         <div class="productImageContainer">
             <?php if (!empty($product["image"])): ?>
@@ -24,7 +24,7 @@
                 <span class="productPages"><?php echo htmlspecialchars($product["pageCount"]); ?> pg</span>
             </div>
 
-            <p class="productPrice">$<?php echo number_format($product["price"], 2);?></p>
+            <p class="productPrice">$<?php echo number_format($product["price"], 2); ?></p>
         </div>
     </a>
 </article>

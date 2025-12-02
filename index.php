@@ -1,6 +1,6 @@
 <?php
-require_once  "Config/Config.php";
-require_once  "Classes/Database.php";
+require_once "Config/Config.php";
+require_once "Classes/Database.php";
 // Page metadata
 $pageTitle = "Infinite Library Homepage";
 $pageDescription = "Infinite knowledge for quality prices";
@@ -40,7 +40,7 @@ try {
     error_log("New release error: " . $e->getMessage());
 }
 
-require_once  "Templates/Header.php"; ?>
+require_once "Templates/Header.php"; ?>
 
     <!-- Success message -->
 <?php if (isset($_GET["success"]) && $_GET["success"] === "registered"): ?>
@@ -52,72 +52,72 @@ require_once  "Templates/Header.php"; ?>
     </div>
 <?php endif; ?>
 
-<!-- Hero section -->
-<section class="hero">
-    <div class="heroContent">
-        <h1>Stories Never End</h1>
-        <p>The Infinite Library is a place, where knowledge and imagination has no limits
-        Step into endless worlds, one page at a time.</p>
-        <a href="Shop.php">Browse Our Shelves</a>
-    </div>
-</section>
-
-<!-- Featured books carousel -->
-<section class="carouselContainer">
-    <div class="Container">
-        <div class="sectionHeader">
-            <h2>Featured Books</h2>
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="heroContent">
+            <h1>Stories Never End</h1>
+            <p>The Infinite Library is a place, where knowledge and imagination has no limits
+                Step into endless worlds, one page at a time.</p>
+            <a href="Shop.php">Browse Our Shelves</a>
         </div>
+    </section>
 
-        <?php if (!empty($featuredBooks)): ?>
-            <div class="carouselWrapper">
-                <button class="carouselBtn carouselBtnPrev">
-                    <span>&lsaquo;</span>
-                </button>
-
-                <div class="carouselTrack">
-                    <?php foreach ($featuredBooks as $product): ?>
-                        <?php include "Templates/carouselCard.php"; ?>
-                    <?php endforeach; ?>
-                </div>
-
-                <button class="carouselBtn carouselBtnNext">
-                    <span>&rsaquo;</span>
-                </button>
+    <!-- Featured books carousel -->
+    <section class="carouselContainer">
+        <div class="Container">
+            <div class="sectionHeader">
+                <h2>Featured Books</h2>
             </div>
-        <?php else: ?>
-            <p class="noBooksMsg">No featured titles right now, check again later</p>
-        <?php endif; ?>
-    </div>
-</section>
 
-<!-- New release carousel -->
-<section class="carouselContainer">
-    <div class="Container">
-        <div class="sectionHeader">
-            <h2>New Releases</h2>
+            <?php if (!empty($featuredBooks)): ?>
+                <div class="carouselWrapper">
+                    <button class="carouselBtn carouselBtnPrev">
+                        <span>&lsaquo;</span>
+                    </button>
+
+                    <div class="carouselTrack">
+                        <?php foreach ($featuredBooks as $product): ?>
+                            <?php include "Templates/carouselCard.php"; ?>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <button class="carouselBtn carouselBtnNext">
+                        <span>&rsaquo;</span>
+                    </button>
+                </div>
+            <?php else: ?>
+                <p class="noBooksMsg">No featured titles right now, check again later</p>
+            <?php endif; ?>
         </div>
+    </section>
 
-        <?php if (!empty($newReleases)): ?>
-            <div class="carouselWrapper">
-                <button class="carouselBtn carouselBtnPrev">
-                    <span>&lsaquo;</span>
-                </button>
-
-                <div class="carouselTrack">
-                    <?php foreach ($newReleases as $product): ?>
-                        <?php include "Templates/carouselCard.php"; ?>
-                    <?php endforeach; ?>
-                </div>
-
-                <button class="carouselBtn carouselBtnNext">
-                    <span>&rsaquo;</span>
-                </button>
+    <!-- New release carousel -->
+    <section class="carouselContainer">
+        <div class="Container">
+            <div class="sectionHeader">
+                <h2>New Releases</h2>
             </div>
-        <?php else: ?>
-            <p class="noBooksMsg">No new releases right now, check again later</p>
-        <?php endif; ?>
-    </div>
-</section>
 
-<?php require_once  "Templates/Footer.php"; ?>
+            <?php if (!empty($newReleases)): ?>
+                <div class="carouselWrapper">
+                    <button class="carouselBtn carouselBtnPrev">
+                        <span>&lsaquo;</span>
+                    </button>
+
+                    <div class="carouselTrack">
+                        <?php foreach ($newReleases as $product): ?>
+                            <?php include "Templates/carouselCard.php"; ?>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <button class="carouselBtn carouselBtnNext">
+                        <span>&rsaquo;</span>
+                    </button>
+                </div>
+            <?php else: ?>
+                <p class="noBooksMsg">No new releases right now, check again later</p>
+            <?php endif; ?>
+        </div>
+    </section>
+
+<?php require_once "Templates/Footer.php"; ?>

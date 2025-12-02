@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Email is required";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email";
-    }elseif (strlen($email) > 125) {
+    } elseif (strlen($email) > 125) {
         $errors[] = "Email must be 125 characters or less";
     }
 
@@ -150,7 +150,7 @@ require_once "Templates/Header.php";
                                name="firstName"
                                required
                                maxlength="50"
-                               value="<?php echo htmlspecialchars($firstName);?>">
+                               value="<?php echo htmlspecialchars($firstName); ?>">
                     </div>
 
                     <div class="formField">
@@ -171,7 +171,7 @@ require_once "Templates/Header.php";
                            name="email"
                            required
                            maxlength="125"
-                           value="<?php echo htmlspecialchars($email);?>">
+                           value="<?php echo htmlspecialchars($email); ?>">
                 </div>
 
                 <div class="formField">
@@ -180,14 +180,14 @@ require_once "Templates/Header.php";
                            id="phone"
                            name="phone"
                            maxlength="15"
-                           value="<?php echo htmlspecialchars($phone);?>">
+                           value="<?php echo htmlspecialchars($phone); ?>">
                 </div>
 
                 <div class="formField">
                     <label for="address">Address</label>
                     <textarea id="address"
                               name="address"
-                              rows="3"><?php echo htmlspecialchars($address);?></textarea>
+                              rows="3"><?php echo htmlspecialchars($address); ?></textarea>
                 </div>
 
                 <div class="formField">
